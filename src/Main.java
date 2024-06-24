@@ -6,6 +6,11 @@ public class Main {
     public static void main(String[] args) {
 
         HelloWorldClass obj = new HelloWorldClass();
-        obj.run();
+        //this will not start a new thread
+        //obj.run();
+
+        Thread t = new Thread(obj);
+        t.start();
+        System.out.println("Hello World!" + Thread.currentThread().getName());
     }
 }
